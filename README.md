@@ -1,2 +1,2 @@
-# MyManimations
-Some math animations that I made.
+# Projects
+random coding projects i did

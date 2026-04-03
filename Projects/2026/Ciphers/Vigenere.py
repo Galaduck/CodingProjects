@@ -18,11 +18,15 @@ def KeyAnalysis(key):
 def Encrypt(message, key):
     EncryptedMessage = ''
     CeaserList = KeyAnalysis(key)
-    KeyLength = len(CeaserList)
-    MessageLength = len(message)
+    Remover = int(len(CeaserList))
 
-    for x, y in zip(message, CeaserList):
-        EncryptedMessage += ceaser.Encrypt(x, y)
+
+
+    for x in message:
+        for y in CeaserList:
+            EncryptedMessage += ceaser.Encrypt(x, y)
+
+    
 
     return EncryptedMessage
 

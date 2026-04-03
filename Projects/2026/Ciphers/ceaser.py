@@ -2,7 +2,7 @@ lowercase = 'abcdefghijklmnopqrstuvwxyz'
 uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 # Encrypts a message
-def EncryptCeaser(message, shift):
+def Encrypt(message, shift):
     EncryptedMessage = ''
     for x in message:
         if x in lowercase:
@@ -16,7 +16,7 @@ def EncryptCeaser(message, shift):
 
     return EncryptedMessage
         
-def DecryptCeaser(message, shift):
+def Decrypt(message, shift):
     DecryptedMessage = ''
     for x in message:
         if x in lowercase:
@@ -29,4 +29,3 @@ def DecryptCeaser(message, shift):
             DecryptedMessage += x
 
     return DecryptedMessage
-    

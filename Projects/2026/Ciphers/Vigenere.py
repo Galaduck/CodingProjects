@@ -18,20 +18,18 @@ def KeyAnalysis(key):
 def Encrypt(message, key):
     EncryptedMessage = ''
     CeaserList = KeyAnalysis(key)
-    Remover = int(len(CeaserList))
+    KeyIndex = 0
+    KeyLength = len(CeaserList)
 
+    for char in message:
+        if char.isalpha() == True:
+            EncryptedMessage += ceaser.Encrypt(char, CeaserList[KeyIndex])
 
-
-    for x in message:
-        for y in CeaserList:
-            EncryptedMessage += ceaser.Encrypt(x, y)
-
-    
+            KeyIndex = (KeyIndex + 1) % KeyLength
+        
+        
+        else:
+            EncryptedMessage += char
+            KeyIndex = KeyIndex
 
     return EncryptedMessage
-
-
-
-message = 'The lazy brown fox jumps quickly over the bear.'
-key = 'Prime'
-print(Encrypt(message, key))

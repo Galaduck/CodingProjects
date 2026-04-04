@@ -1,10 +1,9 @@
 import ceaser
 lowercase = 'abcdefghijklmnopqrstuvwxyz'
-uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 # This is an attempt to create the Vigenere cypher in python.
 
-# Turns the key into its individual ceaser cypher.
+# Turns the key into its individual ceaser cyphers.
 def KeyAnalysis(key):
     FormattedKey = key.lower()
     CeaserList = []
@@ -33,3 +32,22 @@ def Encrypt(message, key):
             KeyIndex = KeyIndex
 
     return EncryptedMessage
+
+def Decrypt(message, key):
+    DecryptedMessage = ''
+    CeaserList = KeyAnalysis(key)
+    KeyIndex = 0
+    KeyLength = len(CeaserList)
+
+    for char in message:
+        if char.isalpha() == True:
+            DecryptedMessage += ceaser.Decrypt(char, CeaserList[KeyIndex])
+
+            KeyIndex = (KeyIndex + 1) % KeyLength
+        
+        
+        else:
+            DecryptedMessage += char
+            KeyIndex = KeyIndex
+
+    return DecryptedMessage

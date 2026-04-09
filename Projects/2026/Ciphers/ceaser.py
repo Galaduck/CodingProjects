@@ -1,6 +1,7 @@
 lowercase = 'abcdefghijklmnopqrstuvwxyz'
 uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+
 # Encrypts a message
 def Encrypt(message, shift):
     EncryptedMessage = ''

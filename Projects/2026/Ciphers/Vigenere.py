@@ -1,7 +1,6 @@
 import ceaser
 lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
-# This is an attempt to create the Vigenere cypher in python.
 
 # Turns the key into its individual ceaser cyphers.
 def KeyAnalysis(key):
